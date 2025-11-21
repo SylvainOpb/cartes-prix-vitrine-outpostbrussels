@@ -69,22 +69,13 @@
 </table>
 </div>
   </div>
-   <p>Nombre de vues : <span id="view-counter"></span></p>
-<script>
-  // Identifiant unique pour ton site (tu peux changer si tu veux)
-  const pageId = "sylvainopb.github.io/cartes-prix-vitrine-outpostbrussels";
-
-  fetch("https://visit-counter.vercel.app/counter?page=" + encodeURIComponent(pageId))
-    .then(response => response.text())
-    .then(count => {
-      document.getElementById("view-counter").textContent = count;
-    })
-    .catch(error => {
-      console.error("Erreur compteur :", error);
-      document.getElementById("view-counter").textContent = "N/A";
-    });
-</script>
-
+<p>
+  Nombre de vues :
+  <img
+    src="https://visitor-badge.laobi.icu/badge?page_id=SylvainOpb.cartes-prix-vitrine-outpostbrussels"
+    alt="Compteur de visites"
+  />
+</p>
 </body>
 
 </html>
