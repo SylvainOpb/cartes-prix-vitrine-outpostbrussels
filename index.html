@@ -71,14 +71,18 @@
   </div>
    <p>Nombre de vues : <span id="view-counter"></span></p>
 <script>
-fetch("https://hitcount.vercel.app/api/count?user=sylvainopb&repo=cartes-prix-vitrine-outpostbrussels")
-  .then(r => r.json())
-  .then(data => {
-    document.getElementById("view-counter").textContent = data.count;
-  })
-  .catch(() => {
-    document.getElementById("view-counter").textContent = "N/A";
-  });
+  // Identifiant unique pour ton site (tu peux changer si tu veux)
+  const pageId = "sylvainopb.github.io/cartes-prix-vitrine-outpostbrussels";
+
+  fetch("https://visit-counter.vercel.app/counter?page=" + encodeURIComponent(pageId))
+    .then(response => response.text())
+    .then(count => {
+      document.getElementById("view-counter").textContent = count;
+    })
+    .catch(error => {
+      console.error("Erreur compteur :", error);
+      document.getElementById("view-counter").textContent = "N/A";
+    });
 </script>
 
 </body>
