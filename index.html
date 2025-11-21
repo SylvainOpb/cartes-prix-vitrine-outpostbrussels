@@ -69,6 +69,24 @@
 </table>
 </div>
   </div>
+    <p>
+  Nombre de vues : <span id="view-counter">...</span>
+</p>
+  <script>
+  // identifiant unique pour ton compteur (mets ce que tu veux, mais garde-le identique)
+  const COUNTER_KEY = "cartes-prix-2025";
+
+  fetch("https://api.countapi.xyz/hit/" + COUNTER_KEY + "/visites")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("view-counter").textContent = data.value;
+    })
+    .catch(error => {
+      console.error("Erreur compteur :", error);
+      document.getElementById("view-counter").textContent = "N/A";
+    });
+</script>
 </body>
+
 </html>
 
